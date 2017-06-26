@@ -169,7 +169,7 @@ class Worker(object):
         self._stop_requested = False
         self.log = logger
         self.failed_queue = get_failed_queue(connection=self.connection)
-        self.last_cleaned_at = None
+        self.last_cleaned_at = utcnow()
 
         # By default, push the "move-to-failed-queue" exception handler onto
         # the stack
